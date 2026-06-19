@@ -1,0 +1,17 @@
+steps:
+
+- name: gcr.io/cloud-builders/docker
+  args:
+    [
+      'build',
+      '-t',
+      'YOUR_DOCKERHUB_USERNAME/employee-app:v1',
+      '.'
+    ]
+
+- name: gcr.io/cloud-builders/docker
+  args:
+    [
+      'push',
+      'YOUR_DOCKERHUB_USERNAME/employee-app:v1'
+    ]
