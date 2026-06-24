@@ -3,6 +3,7 @@ kind: HorizontalPodAutoscaler
 
 metadata:
   name: nagp-k8-demo-app-hpa
+  namespace: nagp
 
 spec:
   scaleTargetRef:
