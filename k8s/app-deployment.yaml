@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
         - name: nagp-k8-demo-app
-          image: bansalishani/nagp-k8-demo-app:latest
+          image: bansalishani/nagp-k8-demo-app:v1
           imagePullPolicy: Always
 
           ports:
