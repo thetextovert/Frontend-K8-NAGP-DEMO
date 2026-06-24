@@ -5,6 +5,7 @@ metadata:
   namespace: nagp
 
 spec:
+  type: LoadBalancer
   selector:
     app: nagp-k8-demo-app
 
