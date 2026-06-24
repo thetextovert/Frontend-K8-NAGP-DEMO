@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nagp-k8-demo-app-service
+
+spec:
+  selector:
+    app: nagp-k8-demo-app
+
+  ports:
+    - port: 80
+      targetPort: 5000

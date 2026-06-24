@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: nagp-k8-demo-app
+  namespace: nagp
+  labels:
+    app: nagp-k8-demo-app
+
+spec:
+  replicas: 4
+
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+
+  selector:
+    matchLabels:
+      app: nagp-k8-demo-app
+
+  template:
+    metadata:
+      labels:
+        app: nagp-k8-demo-app
+        tier: api
+
+    spec:
+      containers:
+        - name: nagp-k8-demo-app
+          image: bansalishani/nagp-k8-demo-app:latest
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 5000
+
+          envFrom:
+            - configMapRef:
+                name: app-config
+
+          env:
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: DB_PASSWORD
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "250m"
+              memory: "256Mi"
