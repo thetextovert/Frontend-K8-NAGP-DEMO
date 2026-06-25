@@ -1,11 +1,5 @@
-Technology Stack:
-Frontend: React + JavaScript
-Backend API: Node.js + Express.js
-Database: PostgreSQL
-Containerization: Docker
-Container Registry: Docker Hub
-Orchestration: Kubernetes
-Ingress: Nginx Ingress Controller
-Autoscaling: HPA
-Persistence: Persistent Volume Claim
-Monitoring: Metrics Server + kubectl top
+------------------------------------------------------------------------------------------------------------------
+Repository URL: https://github.com/thetextovert/Frontend-K8-NAGP-DEMO.git
+Docker Hub URL: https://hub.docker.com/repository/docker/bansalishani/nagp-k8-demo-app
+Service API tier URL: http://35.231.35.138/api/employees
+------------------------------------------------------------------------------------------------------------------
